@@ -95,7 +95,7 @@ fabric.properties
 *.metals
 
 ### Kafka Logs ###
-./logs/*
+logs/data/*
 
 ### IntelijBuildTarge ###
 fraudDetection/target/*

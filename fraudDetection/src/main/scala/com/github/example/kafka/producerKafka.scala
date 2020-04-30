@@ -8,7 +8,6 @@ import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import org.slf4j.{Logger, LoggerFactory}
 
 object producerKafka extends App{
-  val log: Logger  = LoggerFactory.getLogger(getClass.getSimpleName)
   val props: Properties = new Properties()
   props.put("bootstrap.servers", "localhost:9092")
   props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
@@ -32,5 +31,8 @@ object producerKafka extends App{
         metadata.get().offset())
       Thread.sleep(500)
     })
+  }
+  catch {
+    case e: Exception => println(s"Message: ${e.getMessage}, Cause: ${e.getCause}")
   }
 }
