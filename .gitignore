@@ -94,5 +94,11 @@ fabric.properties
 *.log
 *.metals
 
+### Kafka Logs ###
+./logs/*
+
+### IntelijBuildTarge ###
+fraudDetection/target/*
+
 # End of https://www.gitignore.io/api/scala,intellij
 

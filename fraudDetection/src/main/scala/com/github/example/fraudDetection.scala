@@ -1,9 +1,13 @@
 package com.github.example
 
+import java.util.Properties
+
+import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.common.state.MapStateDescriptor
 import org.apache.flink.streaming.api.datastream.BroadcastStream
 import org.apache.flink.streaming.api.functions.co.KeyedBroadcastProcessFunction
 import org.apache.flink.streaming.api.scala._
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.util.Collector
 
 case class alarmedCustumer(id: String, account: String)
@@ -11,6 +15,9 @@ case class lostCards(id: String, timeStamp: String, name: String, status: String
 
 object fraudDetection extends App {
   val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
+  env.setParallelism(1)
+  val properties = new Properties()
+  properties.setProperty("bootstrap.servers", "localhost:9092")
 
   val alarmedCostumerBroadCast: BroadcastStream[alarmedCustumer] = env
                                                                   .readTextFile("../datasets/alarmed_cust.txt")
@@ -24,7 +31,7 @@ object fraudDetection extends App {
                                                         .broadcast(new MapStateDescriptor("lost_cards", classOf[String], classOf[lostCards]))
 
   val streamedData: DataStream[(String, String)] = env
-                      .readTextFile("../datasets/bank_data.txt")
+                      .addSource(new FlinkKafkaConsumer[String]("TRANSACTIONS_TOPIC", new SimpleStringSchema(), properties))
                       .map(value => (value.split(",")(3), value))
 
   val alarmedCustTransaction = streamedData
