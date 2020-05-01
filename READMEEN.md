@@ -78,7 +78,7 @@
 
 
 ---
-[1]  In the tag ```ports```, change the left value to another port and run ```docker-compose up -d``` again.
+[1]  In the tag ```ports```, change the left value to another port and run ```docker-compose up -d``` again. If you change the kafka's port you need to change the value in "```producerKafka.scala```" at the line ```  props.put("bootstrap.servers", "localhost:9092")```
 ```
 zookeeper:
     container_name: zookeeper
