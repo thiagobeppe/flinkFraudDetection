@@ -63,7 +63,8 @@
 
 # Como executar (Linux - Ubuntu)
 * Em seu terminal, navegue até a raíz do projeto e execute o comando "```./run.sh```" para começar a execução do projeto.
-* Após o fim da execução do projeto será gerado um arquivo de log dentro da pasta  ```analisysResult```, para testar outras configurações pode-se só mexer nos parametros dos filtros
+* Após o fim da execução do projeto será gerado um arquivo de log dentro da pasta  ```analisysResult```, para testar outras configurações pode-se só mexer nos parametros dos filtros.
+* Espere pelo menos 1 minuto após o começo da execução do Consumidor para que todos os filtros sejam utilizados.
 * Para finalizar a execução do programa feche os terminais que abriram com o ```run.sh``` e na pasta raíz do projeto, abra o terminal e execute ```docker-compose down --volumes```.
 
 

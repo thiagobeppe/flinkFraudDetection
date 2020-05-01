@@ -65,6 +65,7 @@
 # How to run (Linux - Ubuntu)
 * In your terminal go to the root of the project and run the command "```./run.sh```" to start the application.
 * In "real-time", the results will be archived in the folder ```analisysResult```, just open the file to see them.
+* Wait at least 1 minute after you start the Consumer, because there is a filter with 1 minute of execution.
 * For finalize your application, close the Kafka and Flink terminals and, in a root of the project, open another terminal and run the command ```docker-compose down --volumes```.
 
 
