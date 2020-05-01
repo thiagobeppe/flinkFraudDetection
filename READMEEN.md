@@ -20,7 +20,7 @@
 
 ---
 # Attention
-* Check if don't have any service running on the ports 2181 and 9092, else your ```docker-compose``` will not build the cointainer. If you can't kill the service you can change the port in docker-compose.yml [1].
+* Check if don't have any service running on the ports 2181 and 9092, otherwise your ```docker-compose``` will not build the cointainer. If you can't kill the service you can change the port in docker-compose.yml [1].
   
 ---
 
