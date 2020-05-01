@@ -77,7 +77,7 @@
 
 
 ---
-[1] Na tag ```ports```, o valor da esquerda é qual porta do seu computador você irá liberar para o docker mapear.
+[1] Na tag ```ports```, o valor da esquerda é qual porta do seu computador você irá liberar para o docker mapear. Caso você mude a porta do Kafka é necessario que mude no arquivo "```producerKafka.scala```" o valor da linha "```  props.put("bootstrap.servers", "localhost:9092")```"
 ```
 zookeeper:
     container_name: zookeeper
