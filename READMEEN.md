@@ -63,7 +63,7 @@
 ---
 # Business rules
 
-* **AlarmedCustomer** - Client who has your ID tagged like a suspicious customer.
+* **AlarmedCustomer** - A client who has your ID tagged like a suspicious customer.
 * **LostCards** - Lost or stolen credit cards.
 * **excessiveTransactions** - If the same client was made more than 10 transactions in a interval of 10 secondes, the transaction will be flagged like a suspicious transaction.
 * **cityChange** - If the same credit card was used in two or more cities the transaction will be flagged like a suspicious transaction.
