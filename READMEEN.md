@@ -12,7 +12,7 @@
 * Shell
 
 ---
-# Necessary Resources
+# Necessary resources
 * Java (11)
 * [Docker](https://www.docker.com/) and [Docker-Compose](https://docs.docker.com/compose/install/)
 * [Scala](https://www.scala-lang.org/download/) (2.12.11)
@@ -24,7 +24,7 @@
   
 ---
 
-# Project Structure
+# Project structure
 ```
 ├── analisysResult
 ├── datasets
@@ -61,7 +61,15 @@
 * **logs/data**  - *The kafka's logs will be put here*
 
 ---
+# Business rules
 
+* **AlarmedCustomer** - Client who has your ID tagged like a suspicious customer.
+* **LostCards** - Lost or stolen credit cards.
+* **excessiveTransactions** - If the same client was made more than 10 transactions in a interval of 10 secondes, the transaction will be flagged like a suspicious transaction.
+* **cityChange** - If the same credit card was used in two or more cities the transaction will be flagged like a suspicious transaction.
+
+
+---
 # How to run (Linux - Ubuntu)
 * In your terminal go to the root of the project and run the command "```./run.sh```" to start the application.
 * In "real-time", the results will be archived in the folder ```analisysResult```, just open the file to see them.

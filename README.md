@@ -61,6 +61,14 @@
 
 ---
 
+# Regras de negócio
+
+* **AlarmedCustomer** - Cliente que está marcado como possível fraud por algum motivo, caso haja alguma compra com seu ID será *"taggeado"*.
+* **LostCards** - Cartões perdidos ou declarados como roubados.
+* **excessiveTransactions** - Caso haja mais 10 ou mais transações com o mesmo cartão em um período de 10 segundos, é caracterizado como possível fraude.
+* **cityChange** - Caso o mesmo cartão seja usado em 2 ou mais cidades diferentes em um prazo de 1 minutos, será caracaterizado como possível fraude.
+
+---
 # Como executar (Linux - Ubuntu)
 * Em seu terminal, navegue até a raíz do projeto e execute o comando "```./run.sh```" para começar a execução do projeto.
 * Após o fim da execução do projeto será gerado um arquivo de log dentro da pasta  ```analisysResult```, para testar outras configurações pode-se só mexer nos parametros dos filtros.
